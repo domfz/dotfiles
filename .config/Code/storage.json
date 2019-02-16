@@ -1,0 +1,55 @@
+{
+    "telemetry.machineId": "8bbf5f10791ce150a3108e975d464f85b7c43be00b0146eb49607f150a7c881e",
+    "theme": "vs",
+    "themeBackground": "#ffffff",
+    "pickerWorkingDir": "/home/domi/.i3",
+    "openedPathsList": {
+        "workspaces2": [
+            "file:///home/domi/.i3",
+            "file:///home/domi/Projects"
+        ],
+        "files2": [
+            "file:///home/domi/.config/conky/conky_clock",
+            "file:///home/domi/.i3/config",
+            "file:///home/domi/.i3/workspace-4.json",
+            "file:///home/domi/.cache/wal/colors",
+            "file:///home/domi/.config/cava/config",
+            "file:///home/domi/.config/compton.conf",
+            "file:///home/domi/.config/polybar/launch.sh",
+            "file:///home/domi/.config/polybar/config",
+            "file:///home/domi/.cache/wal/colors.sh",
+            "file:///home/domi/clear",
+            "file:///home/domi/Documents/conky-Vision-master/install",
+            "file:///home/domi/.Xresources",
+            "file:///home/domi/.mplayer/config",
+            "file:///home/domi/.config/polybar/.i3/config",
+            "file:///home/domi/.zshrc",
+            "file:///home/domi/.xinitrc",
+            "file:///home/domi/.Xres",
+            "file:///home/domi/example",
+            "file:///home/domi/.Xresources_Bak",
+            "file:///home/domi/.config/dmenu-recent/terminal",
+            "file:///home/domi/.config/dmenu-recent/background"
+        ]
+    },
+    "windowsState": {
+        "openedWindows": [],
+        "lastActiveWindow": {
+            "folderUri": {
+                "$mid": 1,
+                "fsPath": "/home/domi/.i3",
+                "external": "file:///home/domi/.i3",
+                "path": "/home/domi/.i3",
+                "scheme": "file"
+            },
+            "backupPath": "/home/domi/.config/Code/Backups/4302ce0799962bd8176dca6eeea2b27a",
+            "uiState": {
+                "mode": 1,
+                "x": 26,
+                "y": 50,
+                "width": 925,
+                "height": 1004
+            }
+        }
+    }
+}

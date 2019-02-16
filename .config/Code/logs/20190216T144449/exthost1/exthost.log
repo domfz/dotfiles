@@ -1,0 +1,16 @@
+[2019-02-16 14:44:52.472] [exthost] [info] extension host started
+[2019-02-16 14:44:52.543] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"activationEvent":"*"}
+[2019-02-16 14:44:52.543] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/debug-auto-launch/dist/extension
+[2019-02-16 14:44:52.553] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2019-02-16 14:44:52.553] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/emmet/dist/extension
+[2019-02-16 14:44:52.601] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2019-02-16 14:44:52.601] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/git/dist/main
+[2019-02-16 14:44:52.771] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2019-02-16 14:44:52.772] [exthost] [info] ExtensionService#loadCommonJSModule /opt/visual-studio-code/resources/app/extensions/merge-conflict/dist/extension
+[2019-02-16 14:44:52.778] [exthost] [info] ExtensionService#_doActivateExtension dbaeumer.vscode-eslint {"startup":true,"activationEvent":"*"}
+[2019-02-16 14:44:52.778] [exthost] [info] ExtensionService#loadCommonJSModule /home/domi/.vscode/extensions/dbaeumer.vscode-eslint-1.8.0/client/out/extension
+[2019-02-16 14:44:52.844] [exthost] [info] ExtensionService#_doActivateExtension formulahendry.auto-close-tag {"startup":true,"activationEvent":"*"}
+[2019-02-16 14:44:52.844] [exthost] [info] ExtensionService#loadCommonJSModule /home/domi/.vscode/extensions/formulahendry.auto-close-tag-0.5.6/out/src/extension
+[2019-02-16 14:44:52.846] [exthost] [info] ExtensionService#_doActivateExtension formulahendry.auto-rename-tag {"startup":true,"activationEvent":"*"}
+[2019-02-16 14:44:52.846] [exthost] [info] ExtensionService#loadCommonJSModule /home/domi/.vscode/extensions/formulahendry.auto-rename-tag-0.0.15/out/src/extension
+[2019-02-16 14:44:52.849] [exthost] [info] eager extensions activated
