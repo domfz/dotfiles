@@ -13,6 +13,9 @@ compinit
 #How prompt is looking
 export PS1="[%n%~]"
 
+#Config 
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
 #Colors
 (cat ~/.cache/wal/sequences &)
 
