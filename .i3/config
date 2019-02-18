@@ -7,10 +7,21 @@
 #                                      __/ |
 #                                     |___/ 
 
-# Set mod key (Mod1=<Alt>, Mod4=<Super>)
+#   __  __         _ _            
+#  |  \/  |___  __| | |_____ _  _ 
+#  | |\/| / _ \/ _` | / / -_) || |
+#  |_|  |_\___/\__,_|_\_\___|\_, |
+#                            |__/ 
+# (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod1
 
-# Autostart
+
+
+#     _       _          _            _   
+#    /_\ _  _| |_ ___ __| |_ __ _ _ _| |_ 
+#   / _ \ || |  _/ _ (_-<  _/ _` | '_|  _|
+#  /_/ \_\_,_|\__\___/__/\__\__,_|_|  \__|
+#                                        
 exec --no-startup-id compton
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
@@ -72,8 +83,7 @@ smart_borders on
 #   / __|___ _ _| |_ _ _ ___| |___
 #  | (__/ _ \ ' \  _| '_/ _ \ (_-<
 #   \___\___/_||_\__|_| \___/_/__/           
-#########################################################################################################                   
-
+#                
 ###################
 # window specific #
 ###################
@@ -303,16 +313,11 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 5 px or 5 ppt
-        bindsym k resize grow height 5 px or 5 ppt
-        bindsym l resize shrink height 5 px or 5 ppt
-        bindsym h resize grow width 5 px or 5 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 5 px or 5 ppt
-        bindsym Down resize shrink height 5 px or 5 ppt
-        bindsym Up resize grow height 5 px or 5 ppt
-        bindsym Right resize grow width 5 px or 5 ppt
+        bindsym Left resize shrink width 2 px or 2 ppt
+        bindsym Down resize shrink height 2 px or 2 ppt
+        bindsym Up resize grow height 2 px or 2 ppt
+        bindsym Right resize grow width 2 px or 2 ppt
 
         # exit resize mode: Enter or Escape
         bindsym Return mode "default"
