@@ -1,17 +1,40 @@
-# i3 config file (v4)
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
-# Start compton for transparency
-exec --no-startup-id compton
-
-#Launch Polybar
-#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#   _ ____     _____             __ _       
+#  (_)___ \   / ____|           / _(_)      
+#   _  __) | | |     ___  _ __ | |_ _  __ _ 
+#  | ||__ <  | |    / _ \| '_ \|  _| |/ _` |
+#  | |___) | | |___| (_) | | | | | | | (_| |
+#  |_|____/   \_____\___/|_| |_|_| |_|\__, |
+#                                      __/ |
+#                                     |___/ 
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod1
 
+# Autostart
+exec --no-startup-id compton
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id pamac-tray
+exec --no-startup-id clipit
+exec --no-startup-id conky -c ~/.config/conky/conky_clock
+exec_always --no-startup-id ff-theme-util
+exec_always --no-startup-id fix_xcursor
+
+# exec --no-startup-id blueman-applet
+# exec_always --no-startup-id sbxkb
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+
+#   _                       _   
+#  | |   __ _ _  _ ___ _  _| |_ 
+#  | |__/ _` | || / _ \ || |  _|
+#  |____\__,_|\_, \___/\_,_|\__|
+#             |__/              
+
 # set default desktop layout (default is tiling)
-# workspace_layout tabbed <stacking|tabbed>
+#workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 new_window pixel 2
@@ -27,45 +50,68 @@ bindsym $mod+y border pixel 2
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-#font xft:URWGothic-Book 11
+font xft:Monospace 11
 
+# Set inner/outer gaps
+gaps inner 15
+gaps outer 25
+
+# Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
+# gaps inner|outer current|all set|plus|minus <px>
+# gaps inner all set 10
+# gaps outer all plus 5
+
+# Smart gaps (gaps used if only more than one container on the workspace)
+#smart_gaps on
+
+# Smart borders (draw borders around container only if it is not the only container on this workspace) 
+# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
+smart_borders on
+
+#    ___         _           _    
+#   / __|___ _ _| |_ _ _ ___| |___
+#  | (__/ _ \ ' \  _| '_/ _ \ (_-<
+#   \___\___/_||_\__|_| \___/_/__/           
+#########################################################################################################                   
+
+###################
+# window specific #
+###################
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
-
-# start a terminal
-bindsym $mod+Return exec terminal
-
 # kill focused window
 bindsym $mod+BackSpace kill
+# change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+# move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+# window focus on mouse
+#focus_follows_mouse no
 
-# start program launcher
+#####################
+# Start application #
+#####################
+# Terminal
+bindsym $mod+Return exec terminal
+# program launcher: dmenu
 bindsym $mod+d exec --no-startup-id dmenu_run -fn 'Overpass Mono:pixelsize=15'
-
-
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 
-################################################################################################
-## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
-################################################################################################
 
-exec --no-startup-id volumeicon
-###bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-#exec --no-startup-id pulseaudio
-#exec --no-startup-id pa-applet
-bindsym $mod+Ctrl+m exec pavucontrol
-
-################################################################################################
-
-# Screen brightness controls
-bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 3; notify-send 'brightness up'"
-bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 3; notify-send 'brightness down'"
-
-# Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec firefox-developer-edition
+# Browser
+bindsym $mod+f exec firefox-developer-edition
+# File Manager
 bindsym $mod+F3 exec pcmanfm
 #bindsym $mod+F3 exec ranger
+
 bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
@@ -73,38 +119,34 @@ bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart du
 bindsym $mod+Shift+semicolon exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
+##########
+# System #
+##########
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 3; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 3; notify-send 'brightness down'"
 # Desktop screenshot
 bindsym Print exec gnome-screenshot
 bindsym Shift+Print exec "sleep 0.2; gnome-screenshot -a"
 
-# focus_follows_mouse no
 
-# change focus
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# move focused window
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
+#############
+# Workspace #
+#############
+#navigate workspaces next / previous
+bindsym $mod+Ctrl+Right workspace next
+bindsym $mod+Ctrl+Left workspace prev
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
 bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
-
 # split orientation
 bindsym $mod+semicolon split h;exec notify-send 'tile horizontally'
 bindsym $mod+v split v;exec notify-send 'tile vertically'
 bindsym $mod+q split toggle
 
 # toggle fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+F11 fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -130,9 +172,37 @@ bindsym $mod+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 
-#navigate workspaces next / previous
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
+###############
+# i3 specific #
+###############
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+
+#   ___                   _ 
+#  / __| ___ _  _ _ _  __| |
+#  \__ \/ _ \ || | ' \/ _` |
+#  |___/\___/\_,_|_||_\__,_|
+#
+################################################################################################
+## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
+################################################################################################
+exec --no-startup-id volumeicon
+###bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+#exec --no-startup-id pulseaudio
+#exec --no-startup-id pa-applet
+bindsym $mod+Ctrl+m exec pavucontrol
+################################################################################################
+
+#  __      __       _                         
+#  \ \    / /__ _ _| |__ ____ __  __ _ __ ___ 
+#   \ \/\/ / _ \ '_| / /(_-< '_ \/ _` / _/ -_)
+#    \_/\_/\___/_| |_\_\/__/ .__/\__,_\__\___|
+#                          |_|                
 
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
@@ -208,15 +278,6 @@ for_window [class=.*] border pixel 2
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
@@ -262,21 +323,6 @@ mode "resize" {
 # Lock screen
 bindsym $mod+Ctrl+l exec --no-startup-id i3lock-fancy -t "Password"
 
-# Autostart applications
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-#exec --no-startup-id manjaro-hello
-exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
-# exec --no-startup-id blueman-applet
-# exec_always --no-startup-id sbxkb
-#exec --no-startup-id conky_start_maia
-exec --no-startup-id conky -c ~/.config/conky/conky_clock
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
-
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
 # https://i3wm.org/docs/userguide.html#xresources
@@ -308,7 +354,13 @@ set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
-# Start i3bar to display a workspace bar (plus the system information i3status if available)
+
+
+#   _ _______           
+#  (_)__ / _ ) __ _ _ _ 
+#  | ||_ \ _ \/ _` | '_|
+#  |_|___/___/\__,_|_|  
+#                      
 bar {
 	i3bar_command i3bar
 	status_command i3status
@@ -353,23 +405,6 @@ bindsym $mod+m bar mode toggle
 #############################
 ### settings for i3-gaps: ###
 #############################
-
-# Set inner/outer gaps
-gaps inner 15
-gaps outer 25
-
-# Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
-# gaps inner|outer current|all set|plus|minus <px>
-# gaps inner all set 10
-# gaps outer all plus 5
-
-# Smart gaps (gaps used if only more than one container on the workspace)
-#smart_gaps on
-
-# Smart borders (draw borders around container only if it is not the only container on this workspace) 
-# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-smart_borders on
-
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
