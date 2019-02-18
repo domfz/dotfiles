@@ -5,8 +5,8 @@
 
 
 **Wallpaper:** [Wallhere](https://wallhere.com/de/wallpaper/562143)  
-**Icon-Theme:**  Papirus-Dark  
 **DE:** i3-gapps  
+**Icon-Theme:**  Papirus-Dark  
 **System Info:** Neofetch  
 **Desktop clock and date:** Conky  
 **Terminal Clock:** tty-clock  
