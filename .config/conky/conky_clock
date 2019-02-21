@@ -8,8 +8,8 @@ conky.config = {
 	font = 'Bitstream Vera Sans:size=8',
 	draw_shades = false,
 	gap_x = 40,
-	gap_y = 13,
-	minimum_height = 400,
+	gap_y = 100,
+	minimum_height = 200,
 	no_buffers = true,
 	own_window = true,
 	own_window_type = 'override',
@@ -31,11 +31,6 @@ ${voffset -80}
 ${font Bitstream Vera Sans:weight=Bold:size=40}${color0}\
 ${time %d %B, %Y}\
 ${voffset -25}
-${font Bitstream Vera Sans:weight=Bold:size=15}${color0}\
-CPU usage  	   RAM usage \
-${voffset 10}
-${font Bitstream Vera Sans:weight=Bold:size=15}${color0}\
-${cpubar 10,170 cpu0}  ${membar 10,170 /}\
 \
 \
 \
